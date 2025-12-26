@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define SIZE 10
+
+int hash[SIZE];
+
+int main() {
+    int key, i;
+    for(i=0;i<SIZE;i++)
+        hash[i]=-1;
+
+    printf("Enter key: ");
+    scanf("%d",&key);
+
+    i = key % SIZE;
+    while(hash[i]!=-1)
+        i = (i+1)%SIZE;
+
+    hash[i]=key;
+    printf("Inserted at %d",i);
+    return 0;
+}
+
+
+SAMPLE OUTPUT
+Enter key: 24
+Inserted at 4
